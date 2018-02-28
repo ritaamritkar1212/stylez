@@ -1,0 +1,17 @@
+<%= form_for(pattern_size) do |f| %>
+  <% if pattern_size.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pattern_size.errors.count, "error") %> prohibited this pattern_size from being saved:</h2>
+
+      <ul>
+      <% pattern_size.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

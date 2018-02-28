@@ -1,0 +1,12 @@
+<%= form_tag(pattern_update_quantities_path(@pattern)) do %>
+	<% Size.all.each do |s| %>
+	    <%= s.name %>
+	    <%= hidden_field_tag "pattern_id[]" , @pattern.id %>
+	    <%= hidden_field_tag "size_id[]" , s.id %>
+	    <%= text_field_tag "quantity[]", @pattern.quantity %>
+	    <br />
+  	<% end %>
+  <div class="actions">
+      	<%= submit_tag "Add" %>
+  </div> 
+<% end %>      

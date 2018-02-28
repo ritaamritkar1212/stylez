@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Patterns</h1>
+
+<table id="pattern_table">
+  <thead>
+    <tr>
+      <th><%= t(:name) %></th>
+      <th><%= t(:description) %></th>
+      <th><%= t(:wholesale_price) %></th>
+      <th><%= t(:retail_price) %></th>
+      <th><%= t(:total_quantity) %></th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patterns.each do |pattern| %>
+      <tr>
+        <td><%= pattern.name %></td>
+        <td><%= pattern.description %></td>
+        <td><%= pattern.wholesale_price %></td>
+        <td><%= pattern.retail_price %></td>
+        <td><%= pattern.quantity %></td>
+        <td><%= link_to 'Show', pattern %></td>
+        <td><%= link_to 'Edit', edit_pattern_path(pattern) %></td>
+        <td><%= link_to 'Destroy', pattern, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Add quantities", add_quantities_pattern_path(pattern)%>
+              
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+<%= link_to 'New Pattern', new_pattern_path %>

@@ -1,0 +1,46 @@
+<%= form_for(pattern) do |f| %>
+  <% if pattern.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pattern.errors.count, "error") %> prohibited this pattern from being saved:</h2>
+
+      <ul>
+      <% pattern.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <table>
+    <tr>
+      <td><%= t(:name) %></td>
+      <td><%= f.text_field :name, required: true %>
+    </tr>
+
+    <tr>
+      <td><%= t(:Description) %></td>
+      <td><%= f.text_field :description, required: true %>
+    </tr>
+
+    <tr>
+      <td><%= t(:wholesale_price) %></td>
+      <td><%= f.text_field :wholesale_price, required: true %>
+    </tr>
+
+    <tr>
+      <td><%= t(:retail_price) %></td>
+      <td><%= f.text_field :retail_price, required: true %>
+    </tr>
+
+    <tr>
+      <td><%= t(:total_quantity) %></td>
+      <td><%= f.text_field :quantity, required: true %>
+    </tr>
+
+    <tr>
+      <td><%= f.submit %></td>
+    </tr>
+    </table>
+  </div>
+<% end %>
