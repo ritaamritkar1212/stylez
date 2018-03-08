@@ -54,3 +54,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.5.1'
+
+group :production do
+  gem 'unicorn' # make sure you follow installation instructions for this gem
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
